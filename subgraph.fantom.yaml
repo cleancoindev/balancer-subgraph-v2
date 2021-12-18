@@ -191,7 +191,7 @@ dataSources:
     name: NoProtocolFeeLiquidityBootstrappingPoolFactory
     network: mainnet
     source:
-      address: '0x458368B3724B5a1c1057A00b28eB03FEb5b64968'
+      address: '0x2C774732c93CE393eC8125bDA49fb3737Ae6F473'
       abi: LiquidityBootstrappingPoolFactory
       startBlock: 24906900
     mapping:
