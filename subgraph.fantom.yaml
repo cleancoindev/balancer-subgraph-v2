@@ -153,6 +153,8 @@ dataSources:
           file: ./abis/ERC20.json
         - name: MetaStablePoolFactory
           file: ./abis/MetaStablePoolFactory.json
+        - name: StablePool
+          file: ./abis/StablePool.json
         - name: MetaStablePool
           file: ./abis/MetaStablePool.json
       eventHandlers:
@@ -301,6 +303,10 @@ templates:
           handler: handleTransfer
         - event: SwapFeePercentageChanged(uint256)
           handler: handleSwapFeePercentageChange
+        - event: AmpUpdateStarted(uint256,uint256,uint256,uint256)
+          handler: handleAmpUpdateStarted
+        - event: AmpUpdateStopped(uint256)
+          handler: handleAmpUpdateStopped
         - event: PriceRateProviderSet(indexed address,indexed address,uint256)
           handler: handlePriceRateProviderSet
         - event: PriceRateCacheUpdated(indexed address,uint256)
