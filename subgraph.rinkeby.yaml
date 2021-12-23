@@ -266,6 +266,8 @@ templates:
           file: ./abis/MetaStablePool.json
         - name: BalancerPoolToken
           file: ./abis/BalancerPoolToken.json
+        - name: StablePool
+          file: ./abis/StablePool.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer

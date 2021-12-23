@@ -294,6 +294,8 @@ templates:
       abis:
         - name: WeightedPool # Necessary for Transfer handler
           file: ./abis/WeightedPool.json
+        - name: StablePool
+          file: ./abis/StablePool.json
         - name: MetaStablePool
           file: ./abis/MetaStablePool.json
         - name: BalancerPoolToken
