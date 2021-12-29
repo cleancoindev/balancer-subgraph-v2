@@ -931,10 +931,10 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
-"@graphprotocol/graph-cli@^0.25.0":
-  version "0.25.0"
-  resolved "https://registry.yarnpkg.com/@graphprotocol/graph-cli/-/graph-cli-0.25.0.tgz#f2a35158cc399c9e42f20571d7ce1643ccd842fa"
-  integrity sha512-94InY8tPkwyUeDh5LTRURJK5NhZDE5e6Lg5q8u1jCuZ8q2ZTCf64W8wa6u3/o27jbyavDQzcsTQgJVeyL2JXfg==
+"@graphprotocol/graph-cli@0.22.2":
+  version "0.22.2"
+  resolved "https://registry.yarnpkg.com/@graphprotocol/graph-cli/-/graph-cli-0.22.2.tgz#f66c5725e730aa18b3459eead529a2e0fb154d40"
+  integrity sha512-1O50KaE2zPIKTeDFipbG1r0CYe7Z54ZhwKB3AbfGA0nDsv+y4BTfTgLL/uiLDDT8FDMRSabK7oXOzIXNY4bKJw==
   dependencies:
     assemblyscript "0.19.10"
     binary-install-raw "0.0.13"
