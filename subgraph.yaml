@@ -303,7 +303,7 @@ dataSources:
     network: mainnet
     source:
       address: '0xD7FAD3bd59D6477cbe1BE7f646F7f1BA25b230f8'
-      abi: AaveLinearPoolFactory
+      abi: LinearPoolFactory
       startBlock: 13766443
     mapping:
       kind: ethereum/events
@@ -318,10 +318,10 @@ dataSources:
           file: ./abis/Vault.json
         - name: ERC20
           file: ./abis/ERC20.json
-        - name: AaveLinearPoolFactory
-          file: ./abis/AaveLinearPoolFactory.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
+        - name: LinearPoolFactory
+          file: ./abis/LinearPoolFactory.json
+        - name: LinearPool
+          file: ./abis/LinearPool.json
       eventHandlers:
         - event: PoolCreated(indexed address)
           handler: handleNewLinearPool
@@ -548,10 +548,10 @@ templates:
         - event: TokenRateCacheUpdated(indexed address,uint256)
           handler: handlePriceRateCacheUpdated
   - kind: ethereum/contract
-    name: AaveLinearPool
+    name: LinearPool
     network: mainnet
     source:
-      abi: AaveLinearPool
+      abi: LinearPool
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
@@ -568,8 +568,8 @@ templates:
           file: ./abis/WeightedPool.json
         - name: MetaStablePool
           file: ./abis/MetaStablePool.json
-        - name: AaveLinearPool
-          file: ./abis/AaveLinearPool.json
+        - name: LinearPool
+          file: ./abis/LinearPool.json
       eventHandlers:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer

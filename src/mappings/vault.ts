@@ -1,29 +1,29 @@
-import { BigInt, BigDecimal, Address, log } from '@graphprotocol/graph-ts';
+import { Address, BigDecimal, BigInt, log } from '@graphprotocol/graph-ts';
 import {
-  Swap as SwapEvent,
+  InternalBalanceChanged,
   PoolBalanceChanged,
   PoolBalanceManaged,
-  InternalBalanceChanged,
+  Swap as SwapEvent,
 } from '../types/Vault/Vault';
-import { Balancer, Pool, Swap, JoinExit, Investment, TokenPrice, UserInternalBalance } from '../types/schema';
+import { Balancer, Investment, JoinExit, Pool, Swap, TokenPrice, UserInternalBalance } from '../types/schema';
 import {
-  tokenToDecimal,
-  getTokenPriceId,
-  scaleDown,
   createPoolSnapshot,
   createUserEntity,
-  getTokenDecimals,
-  loadPoolToken,
-  uptickSwapsForToken,
-  updateTokenBalances,
-  getTradePairSnapshot,
-  getTradePair,
   getBalancerSnapshot,
+  getTokenDecimals,
+  getTokenPriceId,
+  getTradePair,
+  getTradePairSnapshot,
+  loadPoolToken,
+  scaleDown,
+  tokenToDecimal,
+  updateTokenBalances,
+  uptickSwapsForToken,
 } from './helpers/misc';
 import { updatePoolWeights } from './helpers/weighted';
-import { isPricingAsset, updatePoolLiquidity, valueInUSD, swapValueInUSD, isUSDStable } from './pricing';
-import { ZERO, ZERO_BD, MIN_VIABLE_LIQUIDITY, ONE_BD, TokenBalanceEvent } from './helpers/constants';
-import { hasVirtualSupply, isVariableWeightPool, isStableLikePool } from './helpers/pools';
+import { isPricingAsset, swapValueInUSD, updatePoolLiquidity, valueInUSD } from './pricing';
+import { MIN_VIABLE_LIQUIDITY, TokenBalanceEvent, ZERO, ZERO_BD } from './helpers/constants';
+import { hasVirtualSupply, isStableLikePool, isVariableWeightPool } from './helpers/pools';
 import { updateAmpFactor } from './helpers/stable';
 
 /************************************

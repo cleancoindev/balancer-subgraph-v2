@@ -71,26 +71,35 @@ kovan:
 rinkeby:
   network: rinkeby
   Vault:
-    address: "0xBA12222222228d8Ba445958a75a0704d566BF2C8"
-    startBlock: 8441702
+    address: "0xF07513C68C55A31337E3b58034b176A15Dce16eD"
+    startBlock: 9286236
   WeightedPoolFactory:
-    address: "0x8E9aa87E45e92bad84D5F8DD1bff34Fb92637dE9"
-    startBlock: 8441703
+    address: "0x72F700b6e33aB2db1b915E06b99D7Ab913748380"
+    startBlock: 9286282
   WeightedPool2TokenFactory:
-    address: "0xA5bf2ddF098bb0Ef6d120C98217dD6B141c74EE0"
-    startBlock: 8510540
+    address: "0xf2955E1663A281E7cff697a6F0213ad09914f3dF"
+    startBlock: 9286502
   StablePoolFactory:
-    address: "0xc66Ba2B6595D3613CCab350C886aCE23866EDe24"
-    startBlock: 8822477
+    address: "0x73bf10fB8867F5687d0C7590d0aE2B4beBCC85fd"
+    startBlock: 9286507
   MetaStablePoolFactory:
-    address: "0x751dfDAcE1AD995fF13c927f6f761C6604532c79"
-    startBlock: 9027779
+    address: "0xf63193Af8114855c872BC85ED9a10dD66Fc9a290"
+    startBlock: 9286747
   LiquidityBootstrappingPoolFactory:
-    address: "0xdcdbf71A870cc60C6F9B621E28a7D3Ffd6Dd4965"
-    startBlock: 8976588
+    address: "0x18569fE90F773B1578478259727da4605Bc4720A"
+    startBlock: 9286514
+  NoProtocolFeeLiquidityBootstrappingPoolFactory:
+    address: "0x5A8aB12316655Da3ca78EC0A67ee8B0D3892F492"
+    startBlock: 9811592
   InvestmentPoolFactory:
     address: "0xdAE7e32ADc5d490a43cCba1f0c736033F2b4eFca"
     startBlock: 9252383
+  StablePhantomPoolFactory:
+    address: "0x83AD6bC5E666746f35eB8B378351dDb440918b3b"
+    startBlock: 9893391
+  YearnLinearPoolFactory:
+    address: "0x52D16816B50C533214a28b8989309D928AD0E795"
+    startBlock: 9893498
   # ConvergentPoolFactory:
   #   address: ""
   #   startBlock: 0
