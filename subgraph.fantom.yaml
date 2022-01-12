@@ -6,8 +6,8 @@ repository: https://github.com/beethovenxfi/balancer-subgraph-v2
 schema:
   file: ./schema.graphql
 #graft:
-#  base: QmQMChunh37Nb4hqtpVkmMzx6S3gENGhxkwhyB5AmKR9o7
-#  block: 24906900
+#  base: QmZGrbQiR7X7JTvgtwb2wregN5WQysPLX3VL7WfrkFkdgY
+#  block: 25680500
 dataSources:
   - kind: ethereum/contract
     name: Vault

@@ -1,32 +1,31 @@
-import { BigInt, BigDecimal, Address, log } from '@graphprotocol/graph-ts';
+import { Address, BigDecimal, BigInt, log } from '@graphprotocol/graph-ts';
 import {
-  Swap as SwapEvent,
+  InternalBalanceChanged,
   PoolBalanceChanged,
   PoolBalanceManaged,
-  InternalBalanceChanged,
+  Swap as SwapEvent,
 } from '../types/Vault/Vault';
-import { Balancer, Pool, Swap, JoinExit, Investment, TokenPrice, UserInternalBalance } from '../types/schema';
+import { Balancer, Investment, JoinExit, Pool, Swap, TokenPrice, UserInternalBalance } from '../types/schema';
 import {
-  tokenToDecimal,
-  getTokenPriceId,
-  scaleDown,
   createPoolSnapshot,
-  saveSwapToSnapshot,
   createUserEntity,
-  getTokenDecimals,
-  loadPoolToken,
-  uptickSwapsForToken,
-  updateTokenBalances,
-  getTradePairSnapshot,
-  getTradePair,
   getBalancerSnapshot,
+  getTokenDecimals,
+  getTokenPriceId,
+  getTradePair,
+  getTradePairSnapshot,
+  loadPoolToken,
+  saveSwapToSnapshot,
+  scaleDown,
+  tokenToDecimal,
+  updateTokenBalances,
+  uptickSwapsForToken,
 } from './helpers/misc';
 import { updatePoolWeights } from './helpers/weighted';
-import { isUSDStable, isPricingAsset, updatePoolLiquidity, valueInUSD } from './pricing';
+import { isPricingAsset, isUSDStable, updatePoolLiquidity, valueInUSD } from './pricing';
 import { MIN_VIABLE_LIQUIDITY, ONE_BD, TokenBalanceEvent, ZERO, ZERO_BD } from './helpers/constants';
 import { isStableLikePool, isVariableWeightPool } from './helpers/pools';
 import { updateAmpFactor } from './helpers/stable';
-import { updateBatchSwap } from './helpers/batchSwap';
 
 /************************************
  ******** INTERNAL BALANCES *********
@@ -329,9 +328,6 @@ export function handleSwapEvent(event: SwapEvent): void {
   swap.tx = transactionHash;
 
   swap.save();
-
-  //create/update the batch swap that this swap belongs to
-  updateBatchSwap(swap);
 
   // update pool swapsCount
   // let pool = Pool.load(poolId.toHex());
