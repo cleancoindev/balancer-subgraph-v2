@@ -1,13 +1,13 @@
 specVersion: 0.0.2
 description: Beethoven X is a non-custodial portfolio manager, liquidity provider, and price sensor.
 repository: https://github.com/beethovenxfi/balancer-subgraph-v2
-#features:
-#  - grafting
+features:
+  - grafting
 schema:
   file: ./schema.graphql
-#graft:
-#  base: QmQMChunh37Nb4hqtpVkmMzx6S3gENGhxkwhyB5AmKR9o7
-#  block: 24906900
+graft:
+  base: QmV5hRY7dxF3vTqb5SR2cXZCwcjnbucmtHUeXqVQbucnV4
+  block: 28657900
 dataSources:
   - kind: ethereum/contract
     name: Vault
@@ -400,70 +400,70 @@ templates:
         - event: GradualWeightUpdateScheduled(uint256,uint256,uint256[],uint256[])
           handler: handleGradualWeightUpdateScheduled
   - kind: ethereum/contract
-      name: StablePhantomPool
-      network: mainnet
-      source:
-        abi: StablePhantomPool
-      mapping:
-        kind: ethereum/events
-        apiVersion: 0.0.5
-        language: wasm/assemblyscript
-        file: ./src/mappings/poolController.ts
-        entities:
-          - Pool
-          - PoolShare
-          - Swap
-          - PoolToken
-          - GradualWeightUpdate
-        abis:
-          - name: WeightedPool
-            file: ./abis/WeightedPool.json
-          - name: StablePool
-            file: ./abis/StablePool.json
-          - name: MetaStablePool
-            file: ./abis/MetaStablePool.json
-          - name: StablePhantomPool
-            file: ./abis/StablePhantomPool.json
-        eventHandlers:
-          - event: Transfer(indexed address,indexed address,uint256)
-            handler: handleTransfer
-          - event: SwapFeePercentageChanged(uint256)
-            handler: handleSwapFeePercentageChange
-          - event: AmpUpdateStarted(uint256,uint256,uint256,uint256)
-            handler: handleAmpUpdateStarted
-          - event: AmpUpdateStopped(uint256)
-            handler: handleAmpUpdateStopped
-          - event: TokenRateProviderSet(indexed address,indexed address,uint256)
-            handler: handlePriceRateProviderSet
-          - event: TokenRateCacheUpdated(indexed address,uint256)
-            handler: handlePriceRateCacheUpdated
+    name: StablePhantomPool
+    network: mainnet
+    source:
+      abi: StablePhantomPool
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolController.ts
+      entities:
+        - Pool
+        - PoolShare
+        - Swap
+        - PoolToken
+        - GradualWeightUpdate
+      abis:
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: StablePool
+          file: ./abis/StablePool.json
+        - name: MetaStablePool
+          file: ./abis/MetaStablePool.json
+        - name: StablePhantomPool
+          file: ./abis/StablePhantomPool.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: SwapFeePercentageChanged(uint256)
+          handler: handleSwapFeePercentageChange
+        - event: AmpUpdateStarted(uint256,uint256,uint256,uint256)
+          handler: handleAmpUpdateStarted
+        - event: AmpUpdateStopped(uint256)
+          handler: handleAmpUpdateStopped
+        - event: TokenRateProviderSet(indexed address,indexed address,uint256)
+          handler: handlePriceRateProviderSet
+        - event: TokenRateCacheUpdated(indexed address,uint256)
+          handler: handlePriceRateCacheUpdated
   - kind: ethereum/contract
-      name: LinearPool
-      network: mainnet
-      source:
-        abi: LinearPool
-      mapping:
-        kind: ethereum/events
-        apiVersion: 0.0.5
-        language: wasm/assemblyscript
-        file: ./src/mappings/poolController.ts
-        entities:
-          - Pool
-          - PoolShare
-          - Swap
-          - PoolToken
-          - GradualWeightUpdate
-        abis:
-          - name: WeightedPool
-            file: ./abis/WeightedPool.json
-          - name: MetaStablePool
-            file: ./abis/MetaStablePool.json
-          - name: LinearPool
-            file: ./abis/LinearPool.json
-        eventHandlers:
-          - event: Transfer(indexed address,indexed address,uint256)
-            handler: handleTransfer
-          - event: SwapFeePercentageChanged(uint256)
-            handler: handleSwapFeePercentageChange
-          - event: TargetsSet(indexed address,uint256,uint256)
-            handler: handleTargetsSet
+    name: LinearPool
+    network: mainnet
+    source:
+      abi: LinearPool
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolController.ts
+      entities:
+        - Pool
+        - PoolShare
+        - Swap
+        - PoolToken
+        - GradualWeightUpdate
+      abis:
+        - name: WeightedPool
+          file: ./abis/WeightedPool.json
+        - name: MetaStablePool
+          file: ./abis/MetaStablePool.json
+        - name: LinearPool
+          file: ./abis/LinearPool.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+        - event: SwapFeePercentageChanged(uint256)
+          handler: handleSwapFeePercentageChange
+        - event: TargetsSet(indexed address,uint256,uint256)
+          handler: handleTargetsSet
