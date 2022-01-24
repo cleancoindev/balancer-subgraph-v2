@@ -1,13 +1,13 @@
 specVersion: 0.0.2
 description: Beethoven X is a non-custodial portfolio manager, liquidity provider, and price sensor.
 repository: https://github.com/beethovenxfi/balancer-subgraph-v2
-features:
-  - grafting
+#features:
+#  - grafting
 schema:
   file: ./schema.graphql
-graft:
-  base: QmV5hRY7dxF3vTqb5SR2cXZCwcjnbucmtHUeXqVQbucnV4
-  block: 28657900
+#graft:
+#  base: QmV5hRY7dxF3vTqb5SR2cXZCwcjnbucmtHUeXqVQbucnV4
+#  block: 28657900
 dataSources:
   - kind: ethereum/contract
     name: Vault
