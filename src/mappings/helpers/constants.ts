@@ -171,7 +171,7 @@ let linearUsdcAddressByNetwork: AddressByNetwork = {
 };
 
 let linearUsdtAddressByNetwork: AddressByNetwork = {
-  mainnet: '0x2BBf681cC4eb09218BEe85EA2a5d3D13Fa40fC0C',
+  mainnet: '0x0000000000000000000000000000000000000000',
   kovan: '0xe667d48618e71c2a02e4a1b66ed9def1426938b6',
   goerli: '0x0000000000000000000000000000000000000000',
   rinkeby: '0x0000000000000000000000000000000000000000',
