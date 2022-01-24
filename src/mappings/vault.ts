@@ -7,9 +7,6 @@ import {
 } from '../types/Vault/Vault';
 import { Balancer, Investment, JoinExit, Pool, Swap, TokenPrice, UserInternalBalance } from '../types/schema';
 import {
-  tokenToDecimal,
-  getTokenPriceId,
-  scaleDown,
   createUserEntity,
   getBalancerSnapshot,
   getTokenDecimals,
