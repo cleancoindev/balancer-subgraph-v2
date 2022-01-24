@@ -7,7 +7,9 @@ import {
 } from '../types/Vault/Vault';
 import { Balancer, Investment, JoinExit, Pool, Swap, TokenPrice, UserInternalBalance } from '../types/schema';
 import {
-  createPoolSnapshot,
+  tokenToDecimal,
+  getTokenPriceId,
+  scaleDown,
   createUserEntity,
   getBalancerSnapshot,
   getTokenDecimals,
@@ -153,8 +155,6 @@ function handlePoolJoined(event: PoolBalanceChanged): void {
       pool.save();
     }
   }
-
-  createPoolSnapshot(pool, blockTimestamp);
 }
 
 function handlePoolExited(event: PoolBalanceChanged): void {
@@ -227,8 +227,6 @@ function handlePoolExited(event: PoolBalanceChanged): void {
       }
     }
   }
-
-  createPoolSnapshot(pool, blockTimestamp);
 }
 
 /************************************
@@ -454,11 +452,4 @@ export function handleSwapEvent(event: SwapEvent): void {
 
     updatePoolLiquidity(poolId.toHex(), block, tokenOutAddress, blockTimestamp);
   }
-
-  createPoolSnapshot(pool, blockTimestamp);
-
-  // update volume and balances for the tokens
-  // updates token snapshots as well
-  updateTokenBalances(tokenInAddress, tokenAmountIn, TokenBalanceEvent.SWAP_IN, event);
-  updateTokenBalances(tokenOutAddress, tokenAmountOut, TokenBalanceEvent.SWAP_OUT, event);
 }
