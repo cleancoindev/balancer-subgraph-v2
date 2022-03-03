@@ -274,6 +274,33 @@ dataSources:
       eventHandlers:
         - event: PoolCreated(indexed address)
           handler: handleNewLinearPool
+  - kind: ethereum/contract
+    name: BooLinearPoolFactory
+    network: mainnet
+    source:
+      address: '0xba306e3Cf84751d8Ef5e812C18cAa6C567c783E8'
+      abi: LinearPoolFactory
+      startBlock: 32452165
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      file: ./src/mappings/poolFactory.ts
+      entities:
+        - Balancer
+        - Pool
+      abis:
+        - name: Vault
+          file: ./abis/Vault.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: LinearPoolFactory
+          file: ./abis/LinearPoolFactory.json
+        - name: LinearPool
+          file: ./abis/LinearPool.json
+      eventHandlers:
+        - event: PoolCreated(indexed address)
+          handler: handleNewLinearPool
 templates:
   - kind: ethereum/contract
     name: WeightedPool
