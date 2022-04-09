@@ -305,9 +305,9 @@ dataSources:
     name: ReaperLinearPoolFactory
     network: mainnet
     source:
-      address: '0xA073ba0DC041E36A956EE9748965c81e264ab7D6'
+      address: '0x80434cF3661313D1a0632f567c1ba389ee2F7665'
       abi: LinearPoolFactory
-      startBlock: 35270200
+      startBlock: 35348849
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
