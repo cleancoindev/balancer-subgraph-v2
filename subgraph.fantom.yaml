@@ -332,9 +332,9 @@ dataSources:
     name: TarotLinearPoolFactory
     network: mainnet
     source:
-      address: '0xbfd55a29bf62b28e3bd16974a054c66f195fc5ef'
+      address: '0x681B59C9cbBb6AB43ee3360ac6C34E1Dd2f147e9'
       abi: LinearPoolFactory
-      startBlock: 36586788
+      startBlock: 36713100
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.5
