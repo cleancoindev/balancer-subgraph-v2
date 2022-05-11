@@ -21,10 +21,10 @@
     tslib "^1.10.0"
     zen-observable "^0.8.14"
 
-"@assemblyscript/loader@^0.17.5":
-  version "0.17.5"
-  resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.17.5.tgz#35ea5bdf32dd7618f902a42527242eaef09bca1b"
-  integrity sha512-rpYyNh35zn1FS5yHaDHTjvxrCKsJNVvJDi9sJN/LlbuOwvpKeTKX6auTFc2eCTAVCVirY9gr/RylUCCHZPTq9Q==
+"@assemblyscript/loader@^0.20.4":
+  version "0.20.6"
+  resolved "https://registry.yarnpkg.com/@assemblyscript/loader/-/loader-0.20.6.tgz#6083341136548c19376a1cfd1416b313bdb84288"
+  integrity sha512-4DMR/QtvtkGtD0VpFeXR7c2/VK5PswsJ66R0zaKtsjk8P1ED+gEonxpNECP1ZBjxzvv7pGDVWJSXk5epzyU+QA==
 
 "@babel/code-frame@^7.0.0":
   version "7.8.3"
